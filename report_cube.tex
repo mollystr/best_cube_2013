@@ -1,4 +1,3 @@
-
 %% bare_jrnl.tex
 %% V1.3
 %% 2007/01/11
@@ -72,6 +71,9 @@
 
 
 \usepackage[utf8]{inputenc}
+
+\usepackage{color}
+
 
 
 % Some very useful LaTeX packages include:
@@ -394,7 +396,7 @@
 %
 % paper title
 % can use linebreaks \\ within to get better formatting as desired
-\title{Development of an experimental setup to perform low-temperature microscopy in a vectorial magnetic field}
+\title{Development of an experimental setup to perform low-temperature microscopy in a directional magnetic field}
 %
 %
 % author names and IEEE memberships
@@ -480,9 +482,9 @@ Loic Schneider}% <-this % stops a space
 % in the abstract anyway.
 
 % Note that keywords are not normally used for peerreview papers.
-\begin{IEEEkeywords}
-IEEEtran, journal, \LaTeX, paper, template.
-\end{IEEEkeywords}
+%\begin{IEEEkeywords}
+%IEEEtran, journal, \LaTeX, paper, template.
+%\end{IEEEkeywords}
 
 
 
@@ -512,17 +514,20 @@ IEEEtran, journal, \LaTeX, paper, template.
 % Some journals put the first two words in caps:
 % \IEEEPARstart{T}{his demo} file is ....
 
-\IEEEPARstart{T}{he} plane of polarization of light propagating through a magnetic material will be rotated by propagation of light through a magnetic material causes the polarization of the light, which is known as the Faraday effect. In addition, a magnetic material is This rotation is the basis for Kerr or Faraday microscopy, in which an optical microscope is used to image the magnetic domains of a sample. Of particular interest is the observation of the evolution of magnetic domains during the paramagnetic-ferromagnetic transition that occurs in certain materials at the Curie temperature. To this end, we have worked on developing a set-up that allows us to observe this transition.
+\subsection{Magnetism and magneto-optic microscopy}
+\IEEEPARstart{A}{ ferrimagnetic} material is one of opposing magnetic moments in different sub lattices. Below the compensation temperature, the sum of these magnetic moments is non-zero and the material is magnetic. Above the compensation temperature, the magnetic moments cancel each other out at the material becomes non-magnetic. Yet another transition temperature in such materials is the Curie temperature at which the moments cease to be aligned and instead move randomly. As in \cite{garnet}, we wished to examine the domain development during a transition at the compensation temperature.
 
-Kerr/Faraday microscopy
+The magnetic domains of a sample can be examined graphically using magneto-optic microscopy, either based on the Kerr or Faraday effects. Both describe changes in light when reacting with magnetic materials; the Kerr effect describes the changes in light \emph{reflected} from magnetic surfaces with the Faraday effect describes the changes in light \emph{transmitted} through magnetic surfaces. Together these two effects, along with the correct analyzer filters, allow us to image magnetic domains using an optical microscope.
 
-Curie temperature transition
+Our goal was to create an experimental setup combining precise control of strong, directional magnetic fields with a cryostat that allowed temperatures in the range of 80-400K, both of which needed to suitable to fit under an optical microscope. All of this would ideally be controlled by an intuitive software to allow for easy experiment control.
 
-Observation of magnetic domains during the transition.
+\subsection{The previous group's work}
+Our predecessors had designed and fabricated a device which allowed directional control of a magnetic field of up to 200mT. The device is an 80mm cube made of steel to achieve high permeability. There are 4 sets of opposing coils of copper wire through which the field is induced.
 
-The previous group's work 
+{\color{red} IMAGE?}
 
-Our goal (in general)
+\subsection{Objectives}
+Building on the previous groups work, our objectives were to 
 
 %\hfill mds
  
@@ -634,7 +639,8 @@ Our goal (in general)
 
 \subsection{Of the magnetic field in the cube}
 
-\subsubsection
+\subsubsection{Gauss Meter KOSHAVA 5}
+
 
 \section{Conclusion}
 The conclusion goes here.
@@ -729,9 +735,9 @@ Biography text here.
 \end{IEEEbiography}
 
 % if you will not have a photo at all:
-\begin{IEEEbiographynophoto}{John Doe}
-Biography text here.
-\end{IEEEbiographynophoto}
+%\begin{IEEEbiographynophoto}{John Doe}
+%Biography text here.
+%\end{IEEEbiographynophoto}
 
 % insert where needed to balance the two columns on the last page with
 % biographies
