@@ -129,7 +129,7 @@
 % *** GRAPHICS RELATED PACKAGES ***
 %
 \ifCLASSINFOpdf
-  % \usepackage[pdftex]{graphicx}
+\usepackage[pdftex]{graphicx}
   % declare the path(s) where your graphic files are
   % \graphicspath{{../pdf/}{../jpeg/}}
   % and their extensions so you won't have to specify these with
@@ -631,6 +631,8 @@ Building on the previous groups work, our objectives were to
 
 \subsection{Development of control software}
 
+Using a computer equipped with two PCI-bus cards, we were able to control the whole experiment using a software designed with Labview. The output card was very useful to control all parameters of the experiment. For instance, our current generator was commandable with 
+
 \subsection{The Hall bar sensor}
 
 \section{Characterization}
@@ -639,7 +641,33 @@ Building on the previous groups work, our objectives were to
 
 \subsection{Of the magnetic field in the cube}
 
-\subsubsection{Gauss Meter KOSHAVA 5}
+We worked on the characterization of the magnetic field produced by the cube. The cube is made of eight inductors, each one positioned at a vertex. Injecting current in those inductors we get a magnetic field relatively powerful (0.2 Tesla) in the center of the cube. Many questions come up concerning this magnetic field. We tried to figure out if it is homogeneous, we also studied the way the magnetic field responds to the current injected in the inductors.
+
+\subsubsection{Linear response}
+
+Our first experiment was the study of the linear response. We plugged the eight inductors in series in order to get a vertical magnetic field with the maximum intensity. To measure the magnetic field created we used two different devices, the Gauss Meter KOSHAVA 5 and a hall bar sensor. We used a KEPCO ***NAME REQUIRED*** as a current source, wich was able to deliver current up to 3A. The \figurename \ref{fig:linear_gauss} shows the vertical magnetic field as a function of current, the measures were performed using the Gauss Meter.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=2.5in]{champ_fonction_courant.eps}
+\caption{Magnetic field as a function of current}
+\label{fig:linear_gauss}
+\end{figure}
+
+Knowing the linear response measured with the commercial Gauss Meter, we conducted the same experiment using the hall bar sensor to measure the intensity of the magnetic field.
+
+\begin{figure}[h]
+\centering
+
+\includegraphics[width=2.5in]{rampe_courant_20.eps}
+\caption{Magnetic field as a function of current}
+\label{fig:linear_hall_20}
+\end{figure}
+
+The results of the \figurename \ref{fig:linear_hall_20} shows that there is some problems with the hall bar sensor.
+
+
+
 
 
 \section{Conclusion}
