@@ -680,19 +680,19 @@ Figure blabla shows a magnetic field inside the cube spinning in the x-z plane i
 \subsection{The Hall bar sensor}
 A a Hall bar the commercial cross shaped device THS118 from Toshiba was used, a type which has already shown to be useful for measuring magnetization \cite{nishioka}. To ensure a correct measurement, control electronics needed to be fabricated since the Hall bar is in the shape of a cross, and is not (due to normal fabrication uncertainties) completely symmetrical. 
 
-This means, the choice of contacts for measuring the Hall voltage is not arbitrary. By applying a control current to two opposing contacts and measuring the resulting Hall voltage on the remaining two contacts, a different result for the Hall voltage is obtained when the current and voltage contacts are switched. This is due to the mentioned asymmetries in the device geometry.
+This means, the choice of contacts for measuring the Hall voltage is not arbitrary. By applying a control current and a measuring the resulting Hall voltage each on a pair of opposing contacts, different results are obtained when these pairs are switched. This is due to the mentioned asymmetries in the device geometry.
 
 
-The van der Pauw method \cite{pauw} in key in fixing these flaws. A spinning current device \cite{steiner} rotates which ends are measured upon, and on which ends a current is applied. Continuously varying the configuration, and averaging over the values, will allow us to obtain a more accurate measure of the magnetic field. To this end, a spinning current circuit was fabricated to be used in conjunction with the Hall bar.
+Here, the van der Pauw method \cite{pauw} is crucial to eliminate these geometry-based effects. A spinning current device \cite{steiner} constantly switches the pair of Hall voltage measuring contacts and the pair where the current is applied. A continuous variation of the configuration, and averaging over the values, allows to obtain measure of the magnetic field that is cleaned from effects resulting from geometric asymmetries. To this end, a spinning current circuit was fabricated to be used in conjunction with the Hall bar.
 
-The electronic circuit took a sinus wave as input, and used a comparator to detect the point at when the sine wave passes zero. A flip-flop switch connected to the comparator was flipped based on the output. This controlled the switches which decided which direction the Hall sensor was connected (i.e. which ends were connected to the current and which were measured). The frequency of the input sinus wave decides the frequency at which the ends are switched around; this sinus also supplies current to the Hall bar. 
+The electronic circuit took a sine wave as input, and used a comparator to detect the point at which the sine wave passes zero. A flip-flop switch connected to the comparator was flipped based on the output. Over a connection of further switches, this controlled which direction the Hall sensor was connected (i.e. which ends were connected to the current and which were measured). The frequency of the input sine wave determined the frequency at which the contact pairs are switched around; the sine signal also acts as a current source for the Hall bar. 
 
 \begin{figure}[H]
 \includegraphics[width=0.45\textwidth]{circuit}
 \caption{The complete the circuit}
 \end{figure}
 
-The circuit was designed and fabricated, but unfortunately was never fully operational. As seen in the Hubble telescope in 1991, small mistakes can propagate and render a system unusable\cite{hubble}. In this case, a mislabeling of a component which was to convert a 10V to a 2.5V output lead to 10V being applied to the entire circuit. As many of the components were not rated for such a high voltage, they were destroyed. Time constraints prohibited us from restituting this mistake. 
+The circuit was designed and fabricated, but unfortunately was never fully operational. As seen in the Hubble telescope in 1991, small mistakes can propagate and render a system unusable\cite{hubble}. In this case, a mislabeling of a component which served to convert a 10V into a 2.5V output lead to 10V being applied to the entire circuit. As many of the components were not rated for such a high voltage, they were destroyed. Limited time prohibited us from  this mistake. 
 
 \section{Characterization}
 
