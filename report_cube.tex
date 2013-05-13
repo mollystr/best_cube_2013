@@ -73,7 +73,7 @@
 \usepackage[utf8]{inputenc}
 
 \usepackage{color}
-
+\usepackage{float}
 
 
 % Some very useful LaTeX packages include:
@@ -439,8 +439,9 @@ Loic Schneider}% <-this % stops a space
 
 
 % The paper headers
-\markboth{Journal of \LaTeX\ Class Files,~Vol.~6, No.~1, January~2007}%
-{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for Journals}
+%\markboth{Journal of \LaTeX\ Class Files,~Vol.~6, No.~1, January~2007}%f
+%{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for Journals}
+
 % The only time the second header will appear is for the odd numbered pages
 % after the title page when using the twoside option.
 % 
@@ -651,6 +652,18 @@ A valve on the exterior of the cooling cavity permits the interior vacuum to be 
 Using a computer equipped with two PCI-bus cards, we were able to control the whole experiment using a software designed with Labview. The output card was very useful to control all parameters of the experiment. For instance, our current generator was commandable with 
 
 \subsection{The Hall bar sensor}
+The Hall bar sensor was a commercial Toshiba Hall bar, a type which has been shown to be useful for measuring magnetization as in \cite{nishioka}. To ensure a correct measurement, however, control electronics needed to be fabricated. The reason for this was simple; the Hall bar is in the shape of a cross, and is not (due to normal fabrication uncertainties) completely symmetrical. Say that the extremities of the bar are numbered 1-4, and that we might for example apply a current to ends 1 and 3 and measure the resulting Hall voltage in ends 2 and 4. Now say we perform the same experiment, but applying a current to ends 2 and 4 and measuring the voltage on ends 1 and 3. Due to these asymmetries, the voltage measured would be different depending upon which pair we measured.
+
+The van der Pauw method \cite{pauw} in key in fixing these flaws. A spinning current device \cite{steiner} rotates which ends are measured upon, and on which ends a current is applied. Continuously varying the configuration, and averaging over the values, will allow us to obtain a more accurate measure of the magnetic field. To this end, a spinning current circuit was fabricated to be used in conjunction with the Hall bar.
+
+The electronic circuit took a sinus wave as input, and used a comparator to detect the point at when the sine wave passes zero. A flip-flop switch connected to the comparator was flipped based on the output. This controlled the switches which decided which direction the Hall sensor was connected (i.e. which ends were connected to the current and which were measured). The frequency of the input sinus wave decides the frequency at which the ends are switched around; this sinus also supplies current to the Hall bar. 
+
+\begin{figure}[H]
+\includegraphics[width=0.45\textwidth]{circuit}
+\caption{The complete the circuit}
+\end{figure}
+
+The circuit was designed and fabricated, but unfortunately was never fully operational. As seen in the Hubble telescope in 1991, small mistakes can propagate and render a system unusable\cite{hubble}. In this case, a mislabeling of a component which was to convert a 10V to a 2.5V output lead to 10V being applied to the entire circuit. As many of the components were not rated for such a high voltage, they were destroyed. Time constraints prohibited us from restituting this mistake. 
 
 \section{Characterization}
 
@@ -659,6 +672,11 @@ Using a computer equipped with two PCI-bus cards, we were able to control the wh
 \subsection{Of the magnetic field in the cube}
 
 We worked on the characterization of the magnetic field produced by the cube. The cube is made of eight inductors, each one positioned at a vertex. Injecting current in those inductors we get a magnetic field relatively powerful (0.2 Tesla) in the center of the cube. Many questions come up concerning this magnetic field. We tried to figure out if it is homogeneous, we also studied the way the magnetic field responds to the current injected in the inductors.
+
+\begin{figure}[H]
+\includegraphics[width=0.45\textwidth]{cube_pic}
+\caption{The cube as connected to the experimental setup}
+\end{figure}
 
 \subsubsection{Linear response}
 
@@ -749,20 +767,21 @@ The authors would like to thank supervisors Pierre Mohlo and Laurent Ranno of th
 % http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
 % The IEEEtran BibTeX style support page is at:
 % http://www.michaelshell.org/tex/ieeetran/bibtex/
-%\bibliographystyle{IEEEtran}
+\bibliographystyle{IEEEtran}
 % argument is your BibTeX string definitions and bibliography database(s)
-%\bibliography{IEEEabrv,../bib/paper}
+\bibliography{references}
 %
 % <OR> manually copy in the resultant .bbl file
 % set second argument of \begin to the number of references
 % (used to reserve space for the reference number labels box)
-\begin{thebibliography}{1}
 
-\bibitem{IEEEhowto:kopka}
-H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
-  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+%\begin{thebibliography}{1}
 
-\end{thebibliography}
+%\bibitem{IEEEhowto:kopka}
+%H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
+ % 0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+
+%\end{thebibliography}
 
 % biography section
 % 
