@@ -660,6 +660,12 @@ Using a computer equipped with both an analog PCI-bus input and output card from
 
 The 4 pairs of copper coils were supplied by a KEPCO bipolar operational amplifier, and a custom made current generator. Both generators were controllable by an external voltage and therefore by the designed LabView program, using the output card as the gateway between program and generator.
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.45\textwidth]{cube_pic}
+\caption{The cube as connected to the experimental setup}
+\end{figure}
+
 The two independently adjustable current sources allowed a variation of the direction of the generated magnetic field in one or two dimensions. A 3D variational magnetic field could not be created due to the lack of a third independent current source. In order to control the magnetic field with an input in cartesian coordiates, a transfer matrix was calculated to translate from cartesian to the cube's coordinate system. The presence of 4 basis vectors in the "space" of the cube, implies a linear dependency between these since only three vectors are necessary to span a three dimensional space. Consequently, this results in one degree of freedom when applying a current to the cube.  
 The actual wiring of the cube's coils to the used current supplies was dependent on the performed experiment.
 
@@ -677,11 +683,12 @@ Here, the van der Pauw method \cite{pauw} is crucial to eliminate these geometry
 The electronic circuit took a sine wave as input, and used a comparator to detect the point at which the sine wave passes zero. A flip-flop switch connected to the comparator was flipped based on the output. Over a connection of further switches, this controlled which direction the Hall sensor was connected (i.e. which ends were connected to the current and which were measured). The frequency of the input sine wave determined the frequency at which the contact pairs are switched around; the sine signal also acts as a current source for the Hall bar. 
 
 \begin{figure}[H]
+\centering
 \includegraphics[width=0.45\textwidth]{circuit}
 \caption{The complete the circuit}
 \end{figure}
 
-The circuit was designed and fabricated, but unfortunately was never fully operational. As seen in the Hubble telescope in 1991, small mistakes can propagate and render a system unusable\cite{hubble}. In this case, a mislabeling of a component which served to convert a 10V into a 2.5V output lead to 10V being applied to the entire circuit. As many of the components were not rated for such a high voltage, they were destroyed. Limited time prohibited us from constructing a second circuit. 
+The circuit was designed and fabricated, but unfortunately was never fully operational. As seen in the Hubble telescope in 1991, small mistakes can propagate and render a system unusable \cite{hubble}. In this case, a mislabeling of a component which served to convert a 10V into a 2.5V output lead to 10V being applied to the entire circuit. As many of the components were not rated for such a high voltage, they were destroyed. Limited time prohibited us from constructing a second circuit. 
 
 \section{Characterization}
 
@@ -689,8 +696,7 @@ The circuit was designed and fabricated, but unfortunately was never fully opera
 
 
 \subsubsection{On the Hall bar sensor}
-
-The Hall bar sensor is a product designed by Toshiba. The only thing we knew about it was the informations given in the datasheet. Our goal is to use the probe to perform magnetic field measures in the cube. Thus we need to characterize the probe in order to know what kind of measures we can perform with it. We have to keep in mind that the hall sensor is meant to work in the cryostat at temperatures from 80K up to 400K.
+The Hall bar sensor is a product designed by Toshiba. The only thing we knew about it was the informations given in the datasheet \cite{toshiba}. Our goal is to use the hall bar to perform magnetic field measures in the cube. Thus a caracterisation of its behaviour and a calibration are necessary. We have to keep in mind that the hall sensor is meant to work in the cryostat at temperatures from 80K up to 400K. Therefore, a study of its temperature dependence in presence of a magnetic field is necessary in order to be able to convert the measured hall tension to a magnetic field norm.
 
 We needed to study the temperature response of the probe together with the magnetic field response, in order to be able to convert the hall tension to a magnetic field norm. The measures were made in a cryostat at Néel Institute that allows us to raise the temperature from $5$K to $300$K and the magnetic field from $-6$T up to $6$T. It was done at a given temperature with a fluctuating magnetic field (from $-0.5$T up to $0.5$T). The results are given on the \figurename \ref{fig:hall_champ}. The \figurename \ref{fig:hall_champ_6} shows the same experiment using a fluctuating field from $-6$T up to $6$T.
 
@@ -712,7 +718,7 @@ We needed to study the temperature response of the probe together with the magne
 %\subsubsection{Linear response}
 
 
-The Hall bar sensor is a product designed by Toshiba. The only thing we knew about it was the informations given in the datasheet \cite{toshiba}. Our goal is to use the hall bar to perform magnetic field measures in the cube. Thus a caracterisation of its behaviour and a calibration are necessary. We have to keep in mind that the hall sensor is meant to work in the cryostat at temperatures from 80K up to 400K. Therefore, a study of its temperature dependence in presence of a magnetic field is necessary in order to be able to convert the measured hall tension to a magnetic field norm.
+
 
 
 
@@ -720,16 +726,21 @@ The Hall bar sensor is a product designed by Toshiba. The only thing we knew abo
 
 We worked on the characterization of the magnetic field produced by the cube. The cube consists of eight inducting coils, each one positioned at a vertex. By injecting current in those inductors a relatively high magnetic field (0.2 Tesla) is obtained in the center of the cube. A priori, many questions arise concerning such a field. We tried to figure out its homogeneity and also studied its dependence on the current applied to the coils.
 
-\begin{figure}[H]
-\includegraphics[width=0.45\textwidth]{cube_pic}
-\caption{The cube as connected to the experimental setup}
-\end{figure}
+
+
+
 
 %\subsubsection{Linear response}
 
-Primarily, the linear response of the field to the applied current was measured. The eight inductors were connected in series in order to obtain a vertical magnetic field along the z-direction at maximum intensity. To measure the field created we used two different devices, the Gauss Meter KOSHAVA 5 and a hall bar sensor. As a current source a bipolar operational amplifier from Kepco ($\pm$ 36V, $\pm$ 6A) was used. It was able to provide a 3A current in the series connection of the coils. The \figurename \ref{fig:linear_gauss} shows the vertical magnetic field as a function of current, the measures were performed using the Gauss Meter from KOSHAVA.
+First of all, the linear response of the field to the applied current was measured. The eight inductors were connected in series in order to obtain a vertical magnetic field along the z-direction at maximum intensity. To measure the field created we used two different devices, the Gauss Meter KOSHAVA 5 and a hall bar sensor. As a current source a bipolar operational amplifier from Kepco ($\pm$ 36V, $\pm$ 6A) was used. It was able to provide a 3A current in the series connection of the coils. The \figurename \ref{fig:linear_gauss} shows the vertical magnetic field as a function of current, the measures were performed using the Gauss Meter from KOSHAVA.
 
-Knowing the linear response measured with the commercial Gauss Meter, we conducted the same experiment using the hall bar sensor to measure the intensity of the magnetic field. The results are shown on \figurename \ref{fig:linear_hall_20}. In order to get a better signal we made the measures several times, the results presented are the average over 20 points.
+Knowing the linear response measured with the commercial Gauss Meter, we conducted the same experiment using the hall bar sensor to measure the intensity of the magnetic field. The results are shown on \figurename \ref{fig:linear_hall_20}. In order to get a better signal we made the measures several times, the results presented are averaged over 20 points.
+
+Second of all, the homogeneity of the field was studied. Being able to move the Gauss Meter in each directions using verniers, we tried to draw a map of the field in the cube. At a fixed high, the Gauss Meter was moved on the two directions $x$ and $y$ by half a millimeter steps. We also measured the decrease of magnetic field norm at a fixed $(x,y)$ while changing the z-position. During both theses experiments the inductors were still connected in series with a maximum current.
+
+
+
+
 
 \begin{figure}[h]
 \centering
@@ -748,13 +759,35 @@ Knowing the linear response measured with the commercial Gauss Meter, we conduct
 \label{fig:linear_hall_20}
 \end{figure}
 
+\begin{figure}[h]
+\centering
+
+\includegraphics[width=2.5in]{cartographie_champ.eps}
+\caption{Map of the magnetic field}
+\label{fig:map}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+
+\includegraphics[width=2.5in]{cartographie_champ_z.eps}
+\caption{z-direction homogeneity of the field}
+\label{fig:homo_z}
+\end{figure}
+
 \subsection{Discussion}
 
 \subsubsection{About the Hall bar sensor}
 
 The \figurename \ref{fig:hall_champ} shows that the response of the hall bar sensor to a magnetic field is linear on a large range of temperature. But the slope depends on temperature, at a given magnetic field the hall voltage can vary from 20mV. That tells us that the sensor may be useful to perform measure but if has to be used carefully if placed directly in the cryostat.
 
+Looking at \figurename \ref{fig:linear_hall_20} we see that (even though the measures were averaged over 20 points) the signal is not as good as the one we get with the Gauss Meter. Many things can explain this phenomena. First the Hall signal is very low and the input card reached is limit while measuring the signal. The Hall sensor was powered with a 1mA current and as said in \cite{toshiba} it can be powered with currents up to 5mA. Then we weren't able to use the electronic device previously presented in order to get a better signal. 
+
 \subsubsection{About the magnetic field in the cube}
+
+As shown in \figurename \ref{fig:map} we were able to draw a map of the magnetic field norm in the center of the cube. This shows that it is homogeneous on a short scale. As well the \figurename \ref{fir:homo_z} allows us to notice the homogeneity quantitatively. We see that a 5\% variation of the field appears in less than one millimeter, which is quite short considering the volume of the center of the cube to be at least $1\mathrm{cm^3}$.
+
+Some things may be done to gain field homogeneity. The coils are wrapped around cores, and it is possible to adjust the gap between the cores. A short distance between the cores will maximize the norm of the magnetic field, but a long distance will decrease it while improving homogeneity. Other experiments with different distances between the cores should be done in order to see if it really improves the homogeneity of the field.
 
 
 
@@ -786,7 +819,7 @@ Even though a control of the cube's magnetic field was achieved using a LabView 
 %\section{Proof of the First Zonklar Equation}
 %Appendix one text goes here.
 
-\appendix[Directional magnetic field]
+\appendix[Directional control of the magnetic field]
 
 \section*{Genral case}
 
