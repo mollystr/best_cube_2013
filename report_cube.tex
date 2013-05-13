@@ -146,6 +146,7 @@
   % every instance of \includegraphics
   % \DeclareGraphicsExtensions{.eps}
 \fi
+\usepackage{epstopdf}
 % graphicx was written by David Carlisle and Sebastian Rahtz. It is
 % required if you want graphics, photos, etc. graphicx.sty is already
 % installed on most LaTeX systems. The latest version and documentation can
@@ -515,24 +516,6 @@ Loic Schneider}% <-this % stops a space
 % Some journals put the first two words in caps:
 % \IEEEPARstart{T}{his demo} file is ....
 
-\subsection{Magnetism and magneto-optic microscopy}
-\IEEEPARstart{A}{ ferrimagnetic} material is one of opposing magnetic moments in different sub lattices. Below the compensation temperature, the sum of these magnetic moments is non-zero and the material is has a net magnetic moment. Above the compensation temperature, the magnetic moments cancel each other out at the material becomes non-magnetic. Yet another transition temperature in such materials is the Curie temperature at which the moments cease to be aligned and instead move randomly. As in \cite{garnet}, we wished to examine the domain development during a transition at the compensation temperature.
-
-The magnetic domains of a sample can be examined graphically using magneto-optic microscopy, either based on the Kerr or Faraday effects. Both describe changes in light when reacting with magnetic materials; the Kerr effect describes the changes in light \emph{reflected} from magnetic surfaces with the Faraday effect describes the changes in light \emph{transmitted} through magnetic surfaces. Together these two effects, along with the correct analyzer filters, allow us to image magnetic domains using an optical microscope.
-
-Our goal was to create an experimental setup combining precise control of strong, directional magnetic fields with a cryostat that allowed temperatures in the range of 80-400K, both of which needed to suitable to fit under an optical microscope. All of this would ideally be controlled by an intuitive software to allow for easy experiment control.
-
-\subsection{The previous group's work}
-Our predecessors had designed and fabricated a device which allowed directional control of a magnetic field of up to 200mT. The device is an 80mm cube made of steel to achieve high permeability. There are 4 sets of opposing coils of copper wire through which the field is induced.
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.4\textwidth]{cube}
-\caption{Conceptual image of the field-producing cube designed by the previous group}
-\end{figure}
-
-\subsection{Objectives}
-Building on the previous groups work, principle objective was to develop a system around the cube that would allow experiments on ferromagnetic materials around the compensation temperature. First of all, the cube's magnetic field would need to be characterized for both homogeneity and strength. To this end, it was decided to convert a commercial Hall bar into a gauss meter, in addition to purchasing a commercial gauss meter. It was believed that with the smaller active area, the Hall bar would provide superior sensing capabilities. Next, a cryostat would need to be built which would allow temperature control between 100K and ambient. This cryostat would of course need to fit into the cube. Finally, a computer control system would need to be developed to connect the instruments together. The goal was to create a user-friendly software that would allow operators to enter a set of parameters and quickly perform any variety of experiments. An algorithm for directional control of the cube's magnetic field would also have to be developed. 
-
 %\hfill mds
  
 %\hfill January 11, 2007
@@ -629,30 +612,76 @@ Building on the previous groups work, principle objective was to develop a syste
 % floats. This can be corrected via the \fnbelowfloat command of the
 % stfloats package.
 
+\subsection{Magnetism and magneto-optic microscopy}
+\IEEEPARstart{A}{ ferrimagnetic} material is one of opposing magnetic moments in different sub lattices. Below the compensation temperature, the sum of these magnetic moments is non-zero and the material is has a net magnetic moment. Above the compensation temperature, the magnetic moments cancel each other out as the material becomes non-magnetic. Yet another transition temperature in such materials is the Curie temperature at which the moments cease to be aligned and instead move randomly. As in \cite{garnet}, we wished to examine the domain development during a transition at the compensation temperature.
+
+The magnetic domains of a sample can be examined graphically using magneto-optic microscopy, either based on Kerr or Faraday effects. Both describe changes in light when reacting with magnetic materials; the Kerr effect describes the changes in light \emph{reflected} from magnetic surfaces with the Faraday effect describes the changes in light \emph{transmitted} through magnetic surfaces. Together these two effects, along with the correct analyzer filters, allow us to image magnetic domains using an optical microscope.
+
+Our goal was to create an experimental setup combining precise control of strong, directional magnetic fields with a cryostat that allowed temperatures in the range of 80-400K, both of which needed to fit suitably under an optical microscope. All of this would ideally be controlled by an intuitive software to allow for easy experiment control.
+
+\subsection{The previous group's work}
+Our predecessors had designed and fabricated a device which allowed directional control of a magnetic field of up to 200mT. The device is an 80mm cube made of steel to achieve high permeability. There are 4 sets of opposing coils of copper wired around steel pins through which the field is induced. Their pointed geometry allows an enhanced focussing of the magnetic field. A model of the cube is displayed in figure \ref{f cube}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.4\textwidth]{cube}
+\caption{Conceptual image of the field-producing cube designed by the previous group}
+\label{f cube}
+\end{figure}
+
+\subsection{Objectives}
+Building on the previous groups work, principle objective was to develop a system around the cube that would allow experiments on ferromagnetic materials around the compensation temperature. First of all, the cube's magnetic field would need to be characterized for both homogeneity and strength. To this end, it was decided to convert a commercial Hall bar into a gauss meter, in addition to purchasing a commercial gauss meter. It was believed that with the smaller active area, the Hall bar would provide superior sensing capabilities. Next, a cryostat would need to be built which would allow temperature control between 100K and ambient. This cryostat would of course need to fit into the cube. Finally, a computer control system would need to be developed to connect the instruments together. The goal was to create a user-friendly software that would allow operators to enter a set of parameters and quickly perform any variety of experiments. An algorithm for directional control of the cube's magnetic field would also have to be developed. 
+
+
 
 \section{Conception}
 \subsection{Development of the cryostat}
-The main constraints of the cryostat were that it should be capable of the accurately cooling a sample to a temperature between 100K and ambient, and that the sample should fit inside the cube. This last constraint meant that the actual sample chamber should be no larger that a few cubic centimeters. This chamber would need a portal made of a material which would not distort light, so as to allow for magneto-optical microscopy.
+The main constraints of the cryostat were being capable of accurately cooling a sample to a temperature between 100K and ambient as well as that fitting inside the cube in order to expose the contained sample to the desired magnetic field. This last constraint implies that the actual sample chamber should be no larger than a few cubic centimeters. 
+In order to examine the probe via magneto-optical microscopy, a window of transparent material which does not distort light would be necessary.
 
-The final design of the cryostat consisted of two parts: the sample holder, and the cooling cavity. These two parts are connected, but the contact is exclusively thermal. This allows the vacuums in the two chambers to stay separate. The sample holder will keep a primary vacuum ($10^-3$ mbar), whereas the cooling cavity will be kept in secondary vacuum ($10^-6$mbar). This increased vacuum is to improve the thermal isolation in the cooling cavity. In principle, the cooling cavity will never need to be opened, so that this vacuum will virtually never need to be broken (and therefore never remade). On the other hand, the sample holder will need to be opened every time the sample is to be changed. The easier maintenance of a primary vacuum is preferable in this case, as the main objective of the vacuum in the sample holder is simply to remove residual water molecules.
+The final design of the cryostat consisted of two parts: the sample holder, and the cooling cavity. These two parts are connected via an exclusively thermal contact. This allows to maintain two separate vacuum levels of different pressure in the two chambers. The sample holder is kept in primary vacuum ($10^-3$ mbar), whereas the cooling cavity is kept in secondary vacuum ($10^-6$mbar) to improve the thermal isolation in the cooling cavity. Since, despite in case of malfunction, the cooling cavity remains closed, its vacuum is will virtually never need to be broken (and therefore remade). The vacuum of the sample holder on the other hand needs to be broken frequently in order to change samples. An easier-to-handle and re-establish primary vacuum is preferable in this case, since the main objective of the vacuum in the sample holder is simply to remove residual water molecules.
 
-The interior of the cooling cavity is filled with liquid nitrogen. The nitrogen is topped-off with a tube at the extremity of the cavity. The nitrogen circles through a series of thin copper cylinders layered on top of each other which is placed in the middle of the cavity. The large surface area contacted on the inside of this labyrinth of copper serves to maximize the thermal transfer of the nitrogen, before it is removed from the cooling chamber by a tube (serpentine?).
+
+The interior of the cooling cavity is filled with liquid nitrogen. The nitrogen is topped-off with a tube at the extremity of the cavity. The nitrogen circles through a series of thin copper cylinders layered on top of each other(middle of the cavity). The large surface area contacted on the inside of this copper coil maximizes the thermal transfer from the nitrogen to , before it is extracted (serpentine?). A model of the cryostat is displayed in figure \ref{f cryostat}.
 
 \begin{figure}[h]
 \includegraphics[width=0.45\textwidth]{Cryo_1.jpg}
 \caption{Interior view of the cryostat, with the field-producing cube on the right for scale}
+\label{f cryostat}
 \end{figure}
 
-On the interior of the sample holder, the sample rests on a copper finger that is in thermal contact with the cylindrical layers of copper in the cooling chamber. A cover with a viewing portal made of glass covers the sample. The cover is made of stainless steel, which was chosen for its superior mechanical properties, thermal isolation, and the fact that it can be shaped in a thin layer. A copper wire is wrapped around the extremity of the finger. By sending a current through this wire, the temperature can be regulated. The minimum theoretical temperature is therefore that of liquid nitrogen, 77K. Taking into consideration thermal loses, we hope to attain 100K.
+Inside the sample holder, the sample is placed on a copper finger which has thermal contact to the wired copper tubes in the cooling chamber. A see-through window made of glass covers the sample. The cover is made of stainless steel, which was chosen for its superior mechanical properties: thermal isolation and the fact that it can be shaped in a thin layer. A copper wire is wrapped around the extremity of the finger. By sending a current through this wire, the temperature can be regulated. The minimum theoretical temperature is therefore that of liquid nitrogen, 77K. Taking into consideration thermal loses, we hope to attain 100K.
 
-A valve on the exterior of the cooling cavity permits the interior vacuum to be maintained. It also functions as a security measure. It the pressure in the chamber for any reason becomes too high, the valve will open and levitate the pressure. The design allows for pumping nitrogen into the cavity with the same pump that is used to create the vacuum.
+An external valve permits the maintaimance of the interior vacuum. It also functions as a security measure. If the pressure in the chamber for any reason becomes too high, the valve will open and release the pressure. The design allows pumping nitrogen into the cavity with the same pump that is used to create the vacuum.
 
 \subsection{Development of control software}
 
-Using a computer equipped with two PCI-bus cards, we were able to control the whole experiment using a software designed with Labview. The output card was very useful to control all parameters of the experiment. For instance, our current generator was commandable with 
+Using a computer equipped with both an analog PCI-bus input and output card %name of the control cards
+, we managed to  interactively control the magnetic field in the cube from the computer, via a program designed in LabView.
+
+The 4 pairs of copper coils were supplied by a %full name of Kepco % current generator, able to provide %V,A%
+and a custom made current generator able to provide %V, A%.
+Both generators were controllable by an external voltage and therefore by the designed LabView program, using the output card as the gateway between program and generator.
+The two independently adjustable current sources allowed a variation of the direction of the generated magnetic field in two dimensions. A 3D variational magnetic field could not be created due to the lack of a third independent current source. In order to control the magnetic field with an input in kartesian coordiates, a transfer matrix
+
+\begin{equation}
+blbla matrix
+\end{equation}
+
+was calculated in order to translate to the cube's coordinate system.
+The actual wiring of the cube's coils to the used current supplies was dependent on the performed experiment.
+
+Figure blabla shows a magnetic field inside the cube spinning in the x-z plane in comparison to the output voltages applied to the current sources. The field is recorded by a gaussmeter, measuring only the z component of the field.
+
+
+
+ 
 
 \subsection{The Hall bar sensor}
-The Hall bar sensor was a commercial Toshiba Hall bar, a type which has been shown to be useful for measuring magnetization as in \cite{nishioka}. To ensure a correct measurement, however, control electronics needed to be fabricated. The reason for this was simple; the Hall bar is in the shape of a cross, and is not (due to normal fabrication uncertainties) completely symmetrical. Say that the extremities of the bar are numbered 1-4, and that we might for example apply a current to ends 1 and 3 and measure the resulting Hall voltage in ends 2 and 4. Now say we perform the same experiment, but applying a current to ends 2 and 4 and measuring the voltage on ends 1 and 3. Due to these asymmetries, the voltage measured would be different depending upon which pair we measured.
+A a Hall bar the commercial cross shaped device THS118 from Toshiba was used, a type which has already shown to be useful for measuring magnetization \cite{nishioka}. To ensure a correct measurement, control electronics needed to be fabricated since the Hall bar is in the shape of a cross, and is not (due to normal fabrication uncertainties) completely symmetrical. 
+
+This means, the choice of contacts for measuring the Hall voltage is not arbitrary. By applying a control current to two opposing contacts and measuring the resulting Hall voltage on the remaining two contacts, a different result for the Hall voltage is obtained when the current and voltage contacts are switched. This is due to the mentioned asymmetries in the device geometry.
+
 
 The van der Pauw method \cite{pauw} in key in fixing these flaws. A spinning current device \cite{steiner} rotates which ends are measured upon, and on which ends a current is applied. Continuously varying the configuration, and averaging over the values, will allow us to obtain a more accurate measure of the magnetic field. To this end, a spinning current circuit was fabricated to be used in conjunction with the Hall bar.
 
@@ -710,7 +739,9 @@ The results of the \figurename \ref{fig:linear_hall_20} shows that there is some
 
 
 \section{Conclusion}
-The conclusion goes here.
+
+
+Even though a control of the cube's magnetic field was achieved using a LabView program, the goal of creating an  entire interface which controls the magnetic field and the temperature in the sample chamber was not written, since the cryostat was not accessible for calibration and testing during lab sessions.
 
 
 
