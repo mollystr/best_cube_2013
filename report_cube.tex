@@ -515,7 +515,7 @@ Loic Schneider}% <-this % stops a space
 % \IEEEPARstart{T}{his demo} file is ....
 
 \subsection{Magnetism and magneto-optic microscopy}
-\IEEEPARstart{A}{ ferrimagnetic} material is one of opposing magnetic moments in different sub lattices. Below the compensation temperature, the sum of these magnetic moments is non-zero and the material is magnetic. Above the compensation temperature, the magnetic moments cancel each other out at the material becomes non-magnetic. Yet another transition temperature in such materials is the Curie temperature at which the moments cease to be aligned and instead move randomly. As in \cite{garnet}, we wished to examine the domain development during a transition at the compensation temperature.
+\IEEEPARstart{A}{ ferrimagnetic} material is one of opposing magnetic moments in different sub lattices. Below the compensation temperature, the sum of these magnetic moments is non-zero and the material is has a net magnetic moment. Above the compensation temperature, the magnetic moments cancel each other out at the material becomes non-magnetic. Yet another transition temperature in such materials is the Curie temperature at which the moments cease to be aligned and instead move randomly. As in \cite{garnet}, we wished to examine the domain development during a transition at the compensation temperature.
 
 The magnetic domains of a sample can be examined graphically using magneto-optic microscopy, either based on the Kerr or Faraday effects. Both describe changes in light when reacting with magnetic materials; the Kerr effect describes the changes in light \emph{reflected} from magnetic surfaces with the Faraday effect describes the changes in light \emph{transmitted} through magnetic surfaces. Together these two effects, along with the correct analyzer filters, allow us to image magnetic domains using an optical microscope.
 
@@ -523,11 +523,14 @@ Our goal was to create an experimental setup combining precise control of strong
 
 \subsection{The previous group's work}
 Our predecessors had designed and fabricated a device which allowed directional control of a magnetic field of up to 200mT. The device is an 80mm cube made of steel to achieve high permeability. There are 4 sets of opposing coils of copper wire through which the field is induced.
-
-{\color{red} IMAGE?}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.4\textwidth]{cube}
+\caption{Conceptual image of the field-producing cube designed by the previous group}
+\end{figure}
 
 \subsection{Objectives}
-Building on the previous groups work, our objectives were to 
+Building on the previous groups work, principle objective was to develop a system around the cube that would allow experiments on ferromagnetic materials around the compensation temperature. First of all, the cube's magnetic field would need to be characterized for both homogeneity and strength. To this end, it was decided to convert a commercial Hall bar into a gauss meter, in addition to purchasing a commercial gauss meter. It was believed that with the smaller active area, the Hall bar would provide superior sensing capabilities. Next, a cryostat would need to be built which would allow temperature control between 100K and ambient. This cryostat would of course need to fit into the cube. Finally, a computer control system would need to be developed to connect the instruments together. The goal was to create a user-friendly software that would allow operators to enter a set of parameters and quickly perform any variety of experiments. An algorithm for directional control of the cube's magnetic field would also have to be developed. 
 
 %\hfill mds
  
@@ -628,6 +631,20 @@ Building on the previous groups work, our objectives were to
 
 \section{Conception}
 \subsection{Development of the cryostat}
+The main constraints of the cryostat were that it should be capable of the accurately cooling a sample to a temperature between 100K and ambient, and that the sample should fit inside the cube. This last constraint meant that the actual sample chamber should be no larger that a few cubic centimeters. This chamber would need a portal made of a material which would not distort light, so as to allow for magneto-optical microscopy.
+
+The final design of the cryostat consisted of two parts: the sample holder, and the cooling cavity. These two parts are connected, but the contact is exclusively thermal. This allows the vacuums in the two chambers to stay separate. The sample holder will keep a primary vacuum ($10^-3$ mbar), whereas the cooling cavity will be kept in secondary vacuum ($10^-6$mbar). This increased vacuum is to improve the thermal isolation in the cooling cavity. In principle, the cooling cavity will never need to be opened, so that this vacuum will virtually never need to be broken (and therefore never remade). On the other hand, the sample holder will need to be opened every time the sample is to be changed. The easier maintenance of a primary vacuum is preferable in this case, as the main objective of the vacuum in the sample holder is simply to remove residual water molecules.
+
+The interior of the cooling cavity is filled with liquid nitrogen. The nitrogen is topped-off with a tube at the extremity of the cavity. The nitrogen circles through a series of thin copper cylinders layered on top of each other which is placed in the middle of the cavity. The large surface area contacted on the inside of this labyrinth of copper serves to maximize the thermal transfer of the nitrogen, before it is removed from the cooling chamber by a tube (serpentine?).
+
+\begin{figure}[h]
+\includegraphics[width=0.45\textwidth]{Cryo_1.jpg}
+\caption{Interior view of the cryostat, with the field-producing cube on the right for scale}
+\end{figure}
+
+On the interior of the sample holder, the sample rests on a copper finger that is in thermal contact with the cylindrical layers of copper in the cooling chamber. A cover with a viewing portal made of glass covers the sample. The cover is made of stainless steel, which was chosen for its superior mechanical properties, thermal isolation, and the fact that it can be shaped in a thin layer. A copper wire is wrapped around the extremity of the finger. By sending a current through this wire, the temperature can be regulated. The minimum theoretical temperature is therefore that of liquid nitrogen, 77K. Taking into consideration thermal loses, we hope to attain 100K.
+
+A valve on the exterior of the cooling cavity permits the interior vacuum to be maintained. It also functions as a security measure. It the pressure in the chamber for any reason becomes too high, the valve will open and levitate the pressure. The design allows for pumping nitrogen into the cavity with the same pump that is used to create the vacuum.
 
 \subsection{Development of control software}
 
@@ -692,21 +709,21 @@ The conclusion goes here.
 %
 
 
-\appendices
-\section{Proof of the First Zonklar Equation}
-Appendix one text goes here.
+%\appendices
+%\section{Proof of the First Zonklar Equation}
+%Appendix one text goes here.
 
 % you can choose not to have a title for an appendix
 % if you want by leaving the argument blank
-\section{}
-Appendix two text goes here.
+%\section{}
+%Appendix two text goes here.
 
 
 % use section* for acknowledgement
 \section*{Acknowledgment}
 
 
-The authors would like to thank...
+The authors would like to thank supervisors Pierre Mohlo and Laurent Ranno of the Néel Institue, who made this project possible, as well as Didier Dufeu who designed the cryostat, and Daniel Lepoittevin who aided in the conception of the electronics for the Hall bar sensor.
 
 
 % Can use something like this to put references on a page
@@ -758,9 +775,9 @@ H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
 %\begin{biography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{mshell}}]{Michael Shell}
 % or if you just want to reserve a space for a photo:
 
-\begin{IEEEbiography}{Michael Shell}
-Biography text here.
-\end{IEEEbiography}
+%\begin{IEEEbiography}{Michael Shell}
+%Biography text here.
+%\end{IEEEbiography}
 
 % if you will not have a photo at all:
 %\begin{IEEEbiographynophoto}{John Doe}
@@ -771,9 +788,9 @@ Biography text here.
 % biographies
 %\newpage
 
-\begin{IEEEbiographynophoto}{Jane Doe}
-Biography text here.
-\end{IEEEbiographynophoto}
+%\begin{IEEEbiographynophoto}{Jane Doe}
+%Biography text here.
+%\end{IEEEbiographynophoto}
 
 % You can push biographies down or up by placing
 % a \vfill before or after them. The appropriate
