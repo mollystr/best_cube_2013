@@ -687,7 +687,7 @@ The circuit was designed and fabricated, but unfortunately was never fully opera
 
 \subsection{Experiments}
 
-<<<<<<< HEAD
+
 \subsubsection{On the Hall bar sensor}
 
 The Hall bar sensor is a product designed by Toshiba. The only thing we knew about it was the informations given in the datasheet. Our goal is to use the probe to perform magnetic field measures in the cube. Thus we need to characterize the probe in order to know what kind of measures we can perform with it. We have to keep in mind that the hall sensor is meant to work in the cryostat at temperatures from 80K up to 400K.
@@ -711,11 +711,9 @@ We needed to study the temperature response of the probe together with the magne
 
 %\subsubsection{Linear response}
 
-=======
+
 The Hall bar sensor is a product designed by Toshiba. The only thing we knew about it was the informations given in the datasheet \cite{toshiba}. Our goal is to use the hall bar to perform magnetic field measures in the cube. Thus a caracterisation of its behaviour and a calibration are necessary. We have to keep in mind that the hall sensor is meant to work in the cryostat at temperatures from 80K up to 400K. Therefore, a study of its temperature dependence in presence of a magnetic field is necessary in order to be able to convert the measured hall tension to a magnetic field norm.
 
-The measures were made in a cryostat at Néel Institute that allows us to raise the temperature from 
->>>>>>> 4980324913273a09fe5fb7a061dd613c7a2479c0
 
 
 \subsubsection{On the magnetic field in the cube}
@@ -787,6 +785,70 @@ Even though a control of the cube's magnetic field was achieved using a LabView 
 %\appendices
 %\section{Proof of the First Zonklar Equation}
 %Appendix one text goes here.
+
+\appendix[Directional magnetic field]
+
+\section*{Genral case}
+
+The three-dimensional magnetic field in the cube is created by four pairs of inductors. Assuming we have one current source for each pair of inductors, the magnetic field in the center of the cube is the sum of four vectors. Thus there is an infinite number of current combinaisons creating the same magnetic field (wich has three dimensions).
+
+Let $ABCDEFGH$ be the cube (with $A(0,0,0)$ and $E(0,0,1)$). $ABCD$ is the bottom square face and $EFGH$ the top square face. Our four current sources allows us to create four magnetic fields in the center
+\begin{IEEEeqnarray}{rCl} 
+\mathbf{B_1} &=& \alpha \mathbf{AG}\IEEEyesnumber\IEEEyessubnumber\\
+\mathbf{B_2} &=& \beta \mathbf{CE}\IEEEyessubnumber\\
+\mathbf{B_3} &=& \gamma \mathbf{BH}\IEEEyessubnumber\\
+\noalign{\noindent and\vspace{\jot}}
+\mathbf{B_4} &=& \delta \mathbf{DF}\IEEEyessubnumber
+\end{IEEEeqnarray}
+
+We assume that the current flowing through the pairs of inductors is proportional to the magnetic field created, and that the magnetic field has a diagonal direction. We want to know how to choose $\alpha$, $\beta$, $\gamma$ and $\delta$ in order to get a magnetic field $\mathbf{B}$ with $x$, $y$, and $z$ as components. In the center of the cube the magnetic field is
+\begin{equation} 
+\label{eqn_B} 
+\mathbf{B} = \sum\limits_{i=1}^{4} \mathbf{B_i} 
+\end{equation}
+
+We get a three-equations linear system wich has one degree of liberty. 
+\begin{IEEEeqnarray}{rCl}
+\label{sys_2} 
+\beta &=& \alpha - \frac{x+y}{2}\IEEEyesnumber\IEEEyessubnumber\\
+\gamma &=& \frac{y+z}{2} - \alpha\IEEEyessubnumber\\
+\noalign{\noindent and\vspace{\jot}}
+\delta &=& \frac{x+z}{2} - \alpha\IEEEyessubnumber
+\end{IEEEeqnarray}
+
+
+
+Thus we need another equation in order to have a linear system with a unique solution. For instance we can choose to minimize the Joule heating that is proportional to
+\begin{equation} 
+\label{eqn_P} 
+P^2 = \alpha^2 + \beta^2 + \gamma^2 + \delta^2
+\end{equation}
+
+Taking the derivative of \ref{eqn_P} and equalizing it to zero we get a new equation
+\begin{equation} 
+\label{eqn_4} 
+8 \alpha - 2\left(x + y + z\right) = 0
+\end{equation}
+
+The four-equation linear system we get with \ref{sys_2} and \ref{eqn_4} has a unique solution, wich is
+\begin{IEEEeqnarray}{rCl} 
+\alpha &=& \frac{1}{4} \left(x + y +z \right)\IEEEyesnumber\IEEEyessubnumber\\
+\beta &=& \frac{1}{4} \left(-x - y +z \right)\IEEEyessubnumber\\
+\gamma &=& \frac{1}{4} \left(-x + y +z \right)\IEEEyessubnumber\\
+\noalign{\noindent and\vspace{\jot}}
+\delta &=& \frac{1}{4} \left(x - y +z \right)\IEEEyessubnumber
+\end{IEEEeqnarray}
+
+\section*{Rotating magnetic field}
+
+Using the calculations above we can generate a rotating magnetic field in the plane $xz$, with two current sources able to deliver sine currents. The currents are given by the following equations
+\begin{IEEEeqnarray}{rCl} 
+\alpha &=& \frac{1}{4} \left(\cos(\omega t) + \sin(\omega t) \right)\IEEEyesnumber\IEEEyessubnumber\\
+\beta &=& \frac{1}{4} \left(- \cos(\omega t) + \sin(\omega t) \right)\IEEEyessubnumber\\
+\gamma &=& \beta \IEEEyessubnumber\\
+\noalign{\noindent and\vspace{\jot}}
+\delta &=& \alpha \IEEEyessubnumber
+\end{IEEEeqnarray}
 
 % you can choose not to have a title for an appendix
 % if you want by leaving the argument blank
