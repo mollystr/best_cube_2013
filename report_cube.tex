@@ -666,7 +666,13 @@ The 4 pairs of copper coils were supplied by a KEPCO bipolar operational amplifi
 \end{figure}
 
 The two independently adjustable current sources allowed a variation of the direction of the generated magnetic field in one or two dimensions. A third independent source would be necessary to be able to control the magnetic field in three dimensions. A transfer matrix was calculated to translate from cartesian coordinates (input) to the cube's coordinate system (see appendix \ref{sec:app} for details). The presence of 4 basis vectors in the "space" of the cube implies a linear interdependence  since only three vectors are necessary to span a three dimensional space. This results in one degree of freedom when applying a current to the cube.  The wiring setup of the cube's coils depends on the nature of the experiment performed.
+
+So was one of the experiments to create a magnetic field rotating in the cartesian x-z-plane. The purpose behind performing this experiment was the alignment of the Hall sonde in the cube. Because a magnetic field detector based on a Hall bar is only able to detect components of a magnetic field perpendicular to the plane of the bar, a sonde parallel to the x-y-plane would result in a maximal amplitude of the recorded sine wave of the Hall voltage. This was performed by entering a sine and cosine signal for the $x$ and $z$ coordinate in the LabView program, that converted these signals according to the transfer algorithm displayed in equations \ref{matrix rot} the appendix. These transformed signals were finally used to generate the desired field in the cube.
+
  
+
+
+
 
 \subsection{The Hall bar sensor}
 A commercial cross-shaped Hall bar THS118 from Toshiba was chosen to develop the Hall bar magnetic field sensor. This type has already shown to be useful for measuring magnetization in \cite{nishioka}. Due to imperfections in the Hall bar, control electronics needed to be created to obtain accurate measurements. 
@@ -686,7 +692,7 @@ The electronic circuit took a sine wave as input, and used a comparator to detec
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.45\textwidth]{circuit}
-\caption{The complete the circuit}
+\caption{The complete circuit}
 \end{figure}
 
 The circuit was designed and fabricated, but unfortunately was never fully operational. As seen in the Hubble telescope in 1991, small mistakes can propagate and render a system unusable \cite{hubble}. In this case, a mislabeling of a component which served to convert a 10V into a 2.5V output lead to 10V being applied to the entire circuit. As many of the components were not rated for such a high voltage, they were destroyed. Limited time prohibited us from rectifying this error.
@@ -872,6 +878,7 @@ The four-equation linear system we get with \ref{sys_2} and \ref{eqn_4} has a un
 \gamma &=& \frac{1}{4} \left(-x + y +z \right)\IEEEyessubnumber\\
 \noalign{\noindent and\vspace{\jot}}
 \delta &=& \frac{1}{4} \left(x - y +z \right)\IEEEyessubnumber
+\label{matrix}
 \end{IEEEeqnarray}
 
 \section*{Rotating magnetic field}
@@ -883,6 +890,7 @@ Using the calculations above we can generate a rotating magnetic field in the pl
 \gamma &=& \beta \IEEEyessubnumber\\
 \noalign{\noindent and\vspace{\jot}}
 \delta &=& \alpha \IEEEyessubnumber
+\label{matrix rot}
 \end{IEEEeqnarray}
 The resulting magnetic field will be
 \begin{equation} 
