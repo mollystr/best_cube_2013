@@ -412,7 +412,7 @@
 \author{Molly Bazilchuk, 
 David Egger, 
 Félix Tora, 
-Loïc Schneider}% <-this % stops a space
+Loic Schneider}% <-this % stops a space
 %\thanks{M. Shell is with the Department
 %of Electrical and Computer Engineering, Georgia Institute of Technology, Atlanta,
 %GA, 30332 USA e-mail: (see http://www.michaelshell.org/contact.html).}% <-this % stops a space
@@ -624,7 +624,7 @@ Our predecessors had designed and fabricated a device which allowed directional 
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.45\textwidth,height=0.45 \textwidth]{cube}
+\includegraphics[width=0.4\textwidth]{cube}
 \caption{Conceptual image of the field-producing cube designed by the previous group}
 \label{f cube}
 \end{figure}
@@ -643,7 +643,6 @@ The final design of the cryostat consisted of two parts: the sample holder, and 
 The interior of the cooling cavity is filled with liquid nitrogen. The nitrogen is topped-off with a tube located at the extremity of the cavity. The nitrogen circles through a series of thin copper cylinders layered on top of each other in the middle of the cavity.  The thermal transfer from the nitrogen to the copper cylinders is maximized by the large surface area of the cylinder. After passing through the cylinders, the nitrogen is removed from the cavity. A model of the cryostat is displayed in figure \ref{f cryostat}.
 
 \begin{figure}[h]
-\centering
 \includegraphics[width=0.45\textwidth]{Cryo_1.jpg}
 \caption{Interior view of the cryostat, with the field-producing cube on the right for scale}
 \label{f cryostat}
@@ -697,9 +696,10 @@ The circuit was designed and fabricated, but unfortunately was never fully opera
 
 
 \subsubsection{On the Hall bar sensor}
-The Hall bar sensor is a product designed by Toshiba. The Toshiba data sheet \cite{toshiba} gave us an idea of the properties of the Hall bar. Our goal is to use the hall bar to perform magnetic field measures in the cube, and thus more specific a characterization of its behavior and calibration were necessary. Keeping in mind that the Hall sensor is meant to work in the cryostat at temperatures from 100K up to 400K, and temperature dependence study  in presence of a magnetic field is necessary in order to be able to convert the measured hall tension to a magnetic field norm.
 
-In order to be able to convert the Hall voltage to a magnetic field norm, we needed to study the temperature response of the probe together with an applied magnetic field. The measures were made in a cryostat at Néel Institute that allows us to raise the temperature from $5$K to $300$K and the magnetic field from $-6$T up to $6$T. It was done at a given temperature with a fluctuating magnetic field (from $-0.5$T up to $0.5$T). The results are shown in \figurename \ref{fig:hall_champ}. The \figurename \ref{fig:hall_champ_6} shows the same experiment using a fluctuating field from $-6$T up to $6$T.
+Two Toshiba Hall bars was used to fabricate two text Hall sensors. The Toshiba data sheet \cite{toshiba} gave us an idea of the properties of the Hall bar, but as our goal is to use the hall bar to perform magnetic field measures in the cube, and thus more specific a characterization of its behavior and calibration were necessary. Keeping in mind that the Hall sensor is meant to work in the cryostat at temperatures from 100K up to 400K, and temperature dependence study  in presence of a magnetic field is necessary in order to be able to convert the measured hall tension to a magnetic field norm.
+
+In order to be able to convert the Hall voltage to a magnetic field norm, we needed to study the temperature response of the probe together with an applied magnetic field. The measurements were made in a cryostat at Néel Institute that allows us to vary the temperature between $5$K and $300$K and the magnetic field from $-6$T to $6$T. The characterizations were run at constant temperature with a fluctuating magnetic field (from $-0.5$T up to $0.5$T). The results are shown in \figurename \ref{fig:hall_champ}. The \figurename \ref{fig:hall_champ_6} shows the same experiment using a fluctuating field from $-6$T up to $6$T.
 
 \begin{figure}[h]
 \centering
@@ -723,25 +723,22 @@ In order to be able to convert the Hall voltage to a magnetic field norm, we nee
 
 \subsubsection{On the magnetic field in the cube}
 
-We worked on the characterization of the magnetic field produced by the cube. The cube consists of eight induction coils, each one positioned at a vertex. By injecting current in those inductors a relatively high magnetic field (0.2 Tesla) is obtained in the center of the cube. The cube was further characterized in homogeneity and in current dependence.
+The magnetic field inside the cube was characterized. The cube consists of eight induction coils, each one positioned at a vertex. By injecting current in those inductors a relatively high magnetic field (0.2 Tesla) is obtained in the center of the cube. The cube was further characterized in homogeneity and in current dependence.
 
 
 %\subsubsection{Linear response}
 
-First, the linear response of the field to the applied current was measured. The eight induction coils were connected in series in order to obtain a vertical magnetic field along the z-axis at maximum intensity. To measure the field created we used two different devices, the Gauss Meter KOSHAVA 5 and the previously discussed Hall bar sensor. A bipolar operational amplifier from Kepco ($\pm$ 36V, $\pm$ 6A) was used as the current source. It was able to provide a 3A current in the series connection of the coils. \figurename \ref{fig:linear_gauss} shows the vertical magnetic field as a function of current. These measurements were performed with the Gauss Meter from KOSHAVA.
+First, the linear response of the field to the applied current was measured. The eight induction coils were connected in series in order to obtain a vertical magnetic field at maximum intensity. To measure the field created we used two different devices, the Gauss Meter KOSHAVA 5 and the previously discussed Hall bar sensor. A bipolar operational amplifier from Kepco ($\pm$ 36V, $\pm$ 6A) was used as the current source. It was able to provide a 3A current in the series connection of the coils. \figurename \ref{fig:linear_gauss} shows the vertical magnetic field as a function of current. These measurements were performed with the Gauss Meter from KOSHAVA.
 
 Knowing the linear response measured with the commercial Gauss Meter, we conducted the same experiment using the Hall bar sensor to measure the intensity of the magnetic field. The results are shown on \figurename \ref{fig:linear_hall_20}. In order to get a good signal we had to make the measurements several times; the results presented are averaged over 20 points. This signal distortion meant that the commercial Gauss Meter was more useful in the measuring the magnetic field.
 
 Second of all, the homogeneity of the field was studied. By controlling the movement of the Gauss Meter in each directions using verniers, we tried to draw a map of the field in the cube. At a fixed high, the Gauss Meter was moved on the two directions $x$ and $y$ by half a millimeter steps. We also measured the decrease of magnetic field norm at a fixed $(x,y)$ while changing the z-position. During both these experiments the inductors were still connected in series with a maximum current.
 
 
-
-
-
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.45\textwidth]{champ_fonction_courant.eps}
-\caption{The magnetic field as a function of current, measurements performed with the Gauss Meter}
+\includegraphics[width=0.5\textwidth]{champ_fonction_courant.eps}
+\caption{The magnetic field as a function of current, using the Gauss Meter}
 \label{fig:linear_gauss}
 \end{figure}
 
@@ -749,22 +746,25 @@ Second of all, the homogeneity of the field was studied. By controlling the move
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.45\textwidth]{rampe_courant_20.eps}
-\caption{The magnetic field as a function of current, measurements performed with the Hall bar sensor}
+
+\includegraphics[width=0.5\textwidth]{rampe_courant_20.eps}
+\caption{The magnetic field as a function of current, using the Hall bar sensor}
 \label{fig:linear_hall_20}
 \end{figure}
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.45\textwidth]{cartographie_champ.eps}
-\caption{A three-dimensional map of the magnetic field, created using the Gauss Meter}
+
+\includegraphics[width=0.5\textwidth]{cartographie_champ.eps}
+\caption{A three-dimensional map of the magnetic field, using the Gauss Meter}
 \label{fig:map}
 \end{figure}
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.45\textwidth]{cartographie_champ_z.eps}
-\caption{Vertical homogeneity of the field}
+
+\includegraphics[width=0.5\textwidth]{cartographie_champ_z.eps}
+\caption{Vertical field homogeneity in the cube}
 \label{fig:homo_z}
 \end{figure}
 
@@ -778,21 +778,20 @@ Looking at \figurename \ref{fig:linear_hall_20} we see that (even though the mea
 
 \subsubsection{The magnetic field inside the cube}
 
-As shown in \figurename \ref{fig:map} we were able to draw a map of the magnetic field norm in the center of the cube. This shows that it is homogeneous, at least at short range. Additionally, \figurename \ref{fig:homo_z} allows us to notice the homogeneity quantitatively. We see that a 5\% variation of the field appears in less than one millimeter, which is quite short considering the volume of the center of the cube to be at least $1\mathrm{cm^3}$.
+As shown in \figurename \ref{fig:map} we were able to draw a map of the magnetic field norm in the center of the cube. This shows that the field is homogeneous, at least at short range. Additionally, \figurename \ref{fig:homo_z} allows us to observe the homogeneity quantitatively. We see there is a 5\% variation of the field within one millimeter of the center, which is quite short considering the volume of the center of the cube is at least $1\mathrm{cm^3}$.
 
 The homogeneity of the field may be improved by taking the following measures. The coils are wrapped around cores, and it is possible to adjust the distances between the cores. A short distance between the cores will maximize the norm of the magnetic field, whereas a long distance will decrease it while improving homogeneity. Experiments varying the distances between the cores should be performed in order to see the qualitative effect on the homogeneity of the field. 
 
 \section{Conclusion}
 
-Several of our original objectives were meet. We were able to characterize the magnetic field created in the cube; software was developed to allow us to do this directly through a computer. This will allow for more accurate experimentation using the cube in the future. The software allows control of the cube's magnetic field, but would need to be further developed to allow for temperature control in the sample chamber, as well as more complete controls of the magnetic field.
+Several of our original objectives were met. We were able to characterize the magnetic field created in the cube; software was developed to allow us to do this directly through a computer. This will allow for more accurate experimentation using the cube in the future. The software allows us to control of the cube's magnetic field, but would need to be further developed to allow for temperature control in the sample chamber, as well as more complete controls of the magnetic field. 
 
 The electronics necessary to use the Toshiba Hall bar as a magnetic field sensor are designed, although they will need to be fabricated again to be usable. This may allow the measurement of the magnetic field in the cube to be further improved.
 
-Lastly, allow the cryostat was designed, the construction was not finished until after our project was over. We were never able to test our entire set-up together. The next natural step is to set up the cryostat, and using the computer controls, test the devices with a magneto-optical microscope.
+Lastly, although the cryostat was designed, the construction was not finished until after our project was over. We were never able to test our entire set-up together. The next natural step is to set up the cryostat, and using the computer controls, test the two devices together with a magneto-optical microscope with a ferrimagnetic sample.
 
 \begin{figure}[h]
-\centering
-\includegraphics[width=0.45\textwidth]{cryostat1}
+\includegraphics[width=0.5\textwidth]{cryostat1}
 \caption{An image of the completed cryostat, which we unfortunately were never able to use}
 \label{fig:cryostat1}
 \end{figure}
@@ -858,7 +857,7 @@ P^2 = \alpha^2 + \beta^2 + \gamma^2 + \delta^2
 Taking the derivative of \ref{eqn_P} and equalizing it to zero we get a new equation
 \begin{equation} 
 \label{eqn_4} 
-4 \alpha - \left(x + y + z\right) = 0
+8 \alpha - 2\left(x + y + z\right) = 0
 \end{equation}
 
 The four-equation linear system we get with \ref{sys_2} and \ref{eqn_4} has a unique solution, wich is
@@ -880,12 +879,6 @@ Using the calculations above we can generate a rotating magnetic field in the pl
 \noalign{\noindent and\vspace{\jot}}
 \delta &=& \alpha \IEEEyessubnumber
 \end{IEEEeqnarray}
-
-Then the total magnetic field will be
-\begin{equation} 
-\label{eqn_B2} 
-\mathbf{B} = \cos(\omega t) \mathbf{e_x} + \sin(\omega t) \mathbf{e_z}
-\end{equation}
 
 % you can choose not to have a title for an appendix
 % if you want by leaving the argument blank
