@@ -412,7 +412,7 @@
 \author{Molly Bazilchuk, 
 David Egger, 
 Félix Tora, 
-Loïc Schneider}% <-this % stops a space
+Loic Schneider}% <-this % stops a space
 %\thanks{M. Shell is with the Department
 %of Electrical and Computer Engineering, Georgia Institute of Technology, Atlanta,
 %GA, 30332 USA e-mail: (see http://www.michaelshell.org/contact.html).}% <-this % stops a space
@@ -638,12 +638,11 @@ Building on the previous groups work, our principle objective was to develop a s
 \subsection{Development of the cryostat}
 The cryostat needed to be capable of accurately controlling the sample temperature between 100K and ambient, and it also needed to fit in the cube, so as to correctly place the sample in the magnetic field. This last constraint implies that the actual sample chamber should be no larger than a few cubic centimeters. A transparent window above the sample was also needed in order to perform magneto-optical microscopy. The main requirement of this window was that it would not distort the light passing through it, which would disturb the microscopy.
 
-The final design of the cryostat consisted of two parts: the sample holder, and the cooling cavity. These two parts are connected via an exclusively thermal contact. This allows to maintain two separate vacuum levels of different pressure in the two chambers. The sample holder is kept in primary vacuum ($10^-3$ mbar), whereas the cooling cavity is kept in secondary vacuum ($10^-6$mbar) to improve the thermal isolation in the cooling cavity. Except in case of malfunction, the cooling cavity remains closed so that it will virtually never be pressurized. The vacuum of the sample holder on the other hand needs to be broken frequently in order to change samples. An easier-to-handle and re-establish primary vacuum is preferable in this case, since the main objective of the vacuum in the sample holder is simply to remove residual water molecules.
+The final design of the cryostat consisted of two parts: the sample holder, and the cooling cavity. These two parts are connected via an exclusively thermal contact. This allows to maintain two separate vacuum levels of different pressure in the two chambers. The sample holder is kept in primary vacuum ($10^-3$ mbar), whereas the cooling cavity is kept in secondary vacuum ($10^-6$ mbar) to improve the thermal isolation in the cooling cavity. Except in case of malfunction, the cooling cavity remains closed so that it will virtually never be pressurized. The vacuum of the sample holder on the other hand needs to be broken frequently in order to change samples. An easier-to-handle and re-establish primary vacuum is preferable in this case, since the main objective of the vacuum in the sample holder is simply to remove residual water molecules.
 
 The interior of the cooling cavity is filled with liquid nitrogen. The nitrogen is topped-off with a tube located at the extremity of the cavity. The nitrogen circles through a series of thin copper cylinders layered on top of each other in the middle of the cavity.  The thermal transfer from the nitrogen to the copper cylinders is maximized by the large surface area of the cylinder. After passing through the cylinders, the nitrogen is removed from the cavity. A model of the cryostat is displayed in figure \ref{f cryostat}.
 
 \begin{figure}[h]
-\centering
 \includegraphics[width=0.45\textwidth]{Cryo_1.jpg}
 \caption{Interior view of the cryostat, with the field-producing cube on the right for scale}
 \label{f cryostat}
@@ -665,11 +664,11 @@ The 4 pairs of copper coils were supplied by a KEPCO bipolar operational amplifi
 \caption{The cube as connected to the experimental setup}
 \end{figure}
 
-The two independently adjustable current sources allowed a variation of the direction of the generated magnetic field in one or two dimensions. A third independent source would be necessary to be able to control the magnetic field in three dimensions. A transfer matrix was calculated to translate from cartesian coordinates (input) to the cube's coordinate system (see appendix \ref{sec:app} for details). The presence of 4 basis vectors in the "space" of the cube implies a linear interdependence  since only three vectors are necessary to span a three dimensional space. This results in one degree of freedom when applying a current to the cube.  The wiring setup of the cube's coils depends on the nature of the experiment performed.
+The two independently adjustable current sources allowed a variation of the direction of the generated magnetic field in one or two dimensions. A third independent source would be needed to be able to control the magnetic field in three dimensions. A transfer matrix was calculated to translate from cartesian coordinates (input) to the cube's coordinate system (see appendix \ref{sec:app} for details). The presence of 4 basis vectors in the cube's space implies a linear interdependence  since only three vectors are necessary to span a three-dimensional space. This results in one degree of freedom when applying a current to the cube, which means that there are an infinite number of combinations of input current to give the same output field. The wiring setup of the cube's coils therefore depends on the nature of the experiment performed.
  
 
 \subsection{The Hall bar sensor}
-A commercial cross-shaped Hall bar THS118 from Toshiba was chosen to develop the Hall bar magnetic field sensor. This type has already shown to be useful for measuring magnetization in \cite{nishioka}. Due to imperfections in the Hall bar, control electronics needed to be created to obtain accurate measurements. 
+A commercial cross-shaped Hall bar THS118 from Toshiba was chosen to develop the Hall bar magnetic field sensor. This type has already proven to be useful for measuring magnetization in \cite{nishioka}. Due to imperfections in the Hall bar, control electronics needed to be created to obtain accurate measurements. 
 
 \begin{figure}[H]
 \centering
@@ -740,7 +739,7 @@ Second of all, the homogeneity of the field was studied. By controlling the move
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.45\textwidth]{champ_fonction_courant.eps}
+\includegraphics[width=0.5\textwidth]{champ_fonction_courant.eps}
 \caption{The magnetic field as a function of current, measurements performed with the Gauss Meter}
 \label{fig:linear_gauss}
 \end{figure}
@@ -749,21 +748,24 @@ Second of all, the homogeneity of the field was studied. By controlling the move
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.45\textwidth]{rampe_courant_20.eps}
+
+\includegraphics[width=0.5\textwidth]{rampe_courant_20.eps}
 \caption{The magnetic field as a function of current, measurements performed with the Hall bar sensor}
 \label{fig:linear_hall_20}
 \end{figure}
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.45\textwidth]{cartographie_champ.eps}
+
+\includegraphics[width=0.5\textwidth]{cartographie_champ.eps}
 \caption{A three-dimensional map of the magnetic field, created using the Gauss Meter}
 \label{fig:map}
 \end{figure}
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.45\textwidth]{cartographie_champ_z.eps}
+
+\includegraphics[width=0.5\textwidth]{cartographie_champ_z.eps}
 \caption{Vertical homogeneity of the field}
 \label{fig:homo_z}
 \end{figure}
@@ -791,8 +793,7 @@ The electronics necessary to use the Toshiba Hall bar as a magnetic field sensor
 Lastly, allow the cryostat was designed, the construction was not finished until after our project was over. We were never able to test our entire set-up together. The next natural step is to set up the cryostat, and using the computer controls, test the devices with a magneto-optical microscope.
 
 \begin{figure}[h]
-\centering
-\includegraphics[width=0.45\textwidth]{cryostat1}
+\includegraphics[width=0.5\textwidth]{cryostat1}
 \caption{An image of the completed cryostat, which we unfortunately were never able to use}
 \label{fig:cryostat1}
 \end{figure}
@@ -858,7 +859,7 @@ P^2 = \alpha^2 + \beta^2 + \gamma^2 + \delta^2
 Taking the derivative of \ref{eqn_P} and equalizing it to zero we get a new equation
 \begin{equation} 
 \label{eqn_4} 
-4 \alpha - \left(x + y + z\right) = 0
+8 \alpha - 2\left(x + y + z\right) = 0
 \end{equation}
 
 The four-equation linear system we get with \ref{sys_2} and \ref{eqn_4} has a unique solution, wich is
@@ -880,12 +881,6 @@ Using the calculations above we can generate a rotating magnetic field in the pl
 \noalign{\noindent and\vspace{\jot}}
 \delta &=& \alpha \IEEEyessubnumber
 \end{IEEEeqnarray}
-
-Then the total magnetic field in the center will be
-\begin{equation} 
-\label{eqn_B2} 
-\mathbf{B} = \cos(\omega t) \mathbf{e_x} + \sin(\omega t) \mathbf{e_z}
-\end{equation}
 
 % you can choose not to have a title for an appendix
 % if you want by leaving the argument blank
