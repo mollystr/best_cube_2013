@@ -630,13 +630,13 @@ Our predecessors had designed and fabricated a device which allowed directional 
 \end{figure}
 
 \subsection{Objectives}
-Building on the previous groups work, our principle objective was to develop a system around the cube that would allow for experiments on ferrimagnetic materials around the compensation temperature. First of all, the cube's magnetic field would need to be characterized for both homogeneity and strength. To this end, it was decided to convert a commercial Hall bar into a gauss meter, in addition to purchasing a standard gauss meter. It was believed that with the smaller active area, the Hall bar would provide superior sensing capabilities. Next, a cryostat would need to be built which would allow temperature control between 100K and ambient. This cryostat would of course need to fit inside the cube. Finally, a computer control system would need to be developed to connect the instruments together. The goal was to create a user-friendly software that would allow operators to enter a set of parameters and quickly perform any variety of experiments. An algorithm for directional control of the cube's magnetic field would also have to be developed. 
+Building on the previous groups work, our principle objective was to develop a system around the cube that would allow for experiments on ferrimagnetic materials around the compensation temperature. First of all, the cube's magnetic field would need to be characterized for both homogeneity and strength. To this end, it was decided to convert a commercial Hall bar into a gauss meter, in addition to purchasing a standard gauss meter. We believed that with the smaller active area, the Hall bar would provide superior sensing capabilities. Next, a cryostat would need to be built which would allow temperature control between 100K and ambient. This cryostat would of course need to fit inside the cube. Finally, a computer control system would need to be developed to connect the instruments together. The goal was to create a user-friendly software that would allow operators to enter a set of parameters and quickly perform any variety of experiments. An algorithm for directional control of the cube's magnetic field would also have to be developed. 
 
 
 
 \section{Conception}
 \subsection{Development of the cryostat}
-The cryostat needed to be capable of accurately cooling a sample to between 100K and ambient, and it also needed to fit in the cube, so as to correctly place the sample in the magnetic field. This last constraint implies that the actual sample chamber should be no larger than a few cubic centimeters. A transparent window above the sample was also needed in order to perform magneto-optical microscopy. The main requirement of this window was that it would not distort the light passing through it, which would disturb the microscopy.
+The cryostat needed to be capable of accurately controlling the sample temperature between 100K and ambient, and it also needed to fit in the cube, so as to correctly place the sample in the magnetic field. This last constraint implies that the actual sample chamber should be no larger than a few cubic centimeters. A transparent window above the sample was also needed in order to perform magneto-optical microscopy. The main requirement of this window was that it would not distort the light passing through it, which would disturb the microscopy.
 
 The final design of the cryostat consisted of two parts: the sample holder, and the cooling cavity. These two parts are connected via an exclusively thermal contact. This allows to maintain two separate vacuum levels of different pressure in the two chambers. The sample holder is kept in primary vacuum ($10^-3$ mbar), whereas the cooling cavity is kept in secondary vacuum ($10^-6$mbar) to improve the thermal isolation in the cooling cavity. Except in case of malfunction, the cooling cavity remains closed so that it will virtually never be pressurized. The vacuum of the sample holder on the other hand needs to be broken frequently in order to change samples. An easier-to-handle and re-establish primary vacuum is preferable in this case, since the main objective of the vacuum in the sample holder is simply to remove residual water molecules.
 
@@ -710,14 +710,12 @@ In order to be able to convert the Hall voltage to a magnetic field norm, we nee
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.45\textwidth]{tension_hall_fonction_champ_6T.eps}
-\caption{Hall voltage response on strong magnetic field}
+\caption{Hall voltage response to a strong magnetic field}
 \label{fig:hall_champ_6}
 \end{figure}
 
 
 %\subsubsection{Linear response}
-
-
 
 
 
